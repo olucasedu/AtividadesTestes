@@ -1,0 +1,5 @@
+Pressman e Hirama possuem ideias parecidas sobre Qualidade de Software, pois os dois defendem que um software precisa funcionar corretamente e atender as necessidades do usuário. A diferença é que Pressman foca mais nos processos de desenvolvimento e Hirama destaca mais as características de qualidade do produto.
+
+Na minha visão, qualidade de software é quando um sistema funciona bem, é seguro, fácil de usar e consegue atender o que o usuário precisa sem apresentar muitos erros.
+
+Na prática, esses aspectos ajudam tanto a avaliar softwares já existentes quanto a criar novos sistemas com mais qualidade, usando testes, planejamento e correções constantes durante o desenvolvimento.

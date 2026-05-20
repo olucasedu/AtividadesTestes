@@ -1,0 +1,7 @@
+1-As normas ISO ajudam a definir padrões de qualidade para que o software seja mais seguro, confiável e organizado. Elas orientam desde o desenvolvimento até a manutenção do sistema.
+
+2-(folha separada)
+
+3-Sim, algumas definições mudaram com o tempo para acompanhar novas tecnologias e necessidades dos usuários. As mudanças foram importantes principalmente em segurança e usabilidade.
+
+4- Existem diferentes categorias dentro da Família SQuaRE porque cada norma possui uma função específica, como requisitos, avaliação, medição e gerenciamento da qualidade do software.

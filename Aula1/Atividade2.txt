@@ -1,0 +1,5 @@
+Os softwares discutidos possuem características em comum, como o objetivo de facilitar tarefas e melhorar a experiência dos usuários. Porém, alguns conseguem funcionar de forma eficiente e outros apresentam falhas, travamentos ou problemas de segurança.
+
+Os principais aspectos de qualidade são desempenho, segurança, facilidade de uso e estabilidade. Quando essas partes não funcionam bem, o usuário acaba tendo uma experiência ruim.
+
+Para melhorar, seria importante realizar mais testes, corrigir erros rapidamente e ouvir o feedback dos usuários. Assim, muitos pontos de falha poderiam ser identificados e corrigidos antes de causar problemas maiores.

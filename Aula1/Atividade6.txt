@@ -1,0 +1,5 @@
+1-As associações profissionais da área de qualidade de software normalmente abordam temas como testes de software, segurança, melhoria de processos, engenharia de software e certificações de qualidade. Esses sites ajudam profissionais e empresas a seguirem boas práticas no desenvolvimento de sistemas.
+
+2-Os artigos encontrados nas bibliotecas digitais mostram a importância da qualidade de software para evitar falhas, melhorar a experiência do usuário e aumentar a segurança dos sistemas. Muitos também falam sobre testes, manutenção e padrões de desenvolvimento.
+
+3-Alguns autores importantes da área são Roger Pressman, conhecido pelo livro “Engenharia de Software”, e Watts Humphrey, criador de ideias relacionadas à melhoria de processos e maturidade de software. Suas contribuições ajudaram no desenvolvimento de métodos e práticas para aumentar a qualidade dos sistemas.

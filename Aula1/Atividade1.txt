@@ -1,0 +1,9 @@
+Os principais “vilões” desses casos foram principalmente erros humanos, falhas nos sistemas e falta de testes antes de colocar atualizações ou mudanças em funcionamento. Em alguns casos, como o Bug do Milênio, o problema veio de uma limitação antiga dos sistemas. Já nos casos da AWS, British Airways e CrowdStrike, problemas técnicos e atualizações mal feitas acabaram causando grandes falhas.
+
+Para evitar esses problemas, as empresas poderiam investir mais em testes, monitoramento e sistemas de segurança. Também seria importante ter backups, planos de emergência e revisar melhor as atualizações antes de liberar para milhões de usuários.
+
+Na minha opinião, a qualidade desses softwares era boa, porque são sistemas usados por empresas enormes e no mundo inteiro. Porém, os casos mostram que nenhum software é totalmente perfeito. Mesmo sistemas muito avançados podem apresentar falhas graves quando não são testados corretamente ou quando dependem demais de um único sistema.
+
+A relação entre todos os casos é que eles mostram como a sociedade depende da tecnologia atualmente. Uma falha pequena em software pode acabar afetando aeroportos, bancos, hospitais, empresas e milhões de pessoas ao mesmo tempo.
+
+Os impactos foram muito grandes, causando prejuízos financeiros, atrasos, cancelamentos de voos, queda de serviços online e perda de confiança dos usuários. Em alguns casos, empresas ficaram horas ou até dias sem funcionar normalmente. Isso mostra a importância da qualidade e da segurança no desenvolvimento de softwares.

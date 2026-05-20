@@ -1,0 +1,13 @@
+1-No CMMI, os níveis de 1 a 5 mostram o grau de maturidade dos processos de uma empresa.
+Nível 1: processos desorganizados.
+Nível 2: processos básicos controlados.
+Nível 3: processos padronizados.
+Nível 4: processos medidos e analisados.
+Nível 5: melhoria contínua dos processos.
+Isso ajuda as empresas a terem mais qualidade, organização e menos falhas nos projetos.
+
+2-No modelo MPS-BR os níveis vão de G até A. Conforme a empresa evolui, seus processos ficam mais organizados e eficientes. O nível G é o mais básico e o nível A representa alta maturidade e melhoria contínua.
+
+3-Uma empresa pode se capacitar treinando equipes, organizando processos e seguindo padrões de qualidade. Os benefícios são maior produtividade, redução de erros, melhor organização e maior confiança dos clientes.
+
+4-Algumas empresas certificadas em modelos de maturidade são IBM, Accenture, Stefanini e Tata Consultancy Services (TCS). Essas certificações mostram que as empresas seguem boas práticas no desenvolvimento de software.
