@@ -1,0 +1,35 @@
+1-Eu utilizaria o versionamento SemVer, no formato MAJOR.MINOR.PATCH, porque ele facilita identificar mudanças grandes, novas funcionalidades e correções de erros no projeto.
+
+2-A primeira versão pública poderia ser chamada de 1.0.0, indicando que o software já está pronto para uso.
+
+3-Como foi adicionada uma nova funcionalidade sem quebrar o sistema, a nova versão poderia ser 1.1.0.
+
+4-O histórico inicial ficaria assim:
+0.1.0 → versão inicial de desenvolvimento
+1.0.0 → primeira versão pública
+1.1.0 → adição de nova funcionalidade
+
+5-Continuando da versão 1.1.0:
+Correções:
+1.1.1
+1.1.2
+1.1.3
+Novas funcionalidades compatíveis:
+1.2.0
+1.3.0
+Mais duas correções:
+1.3.1
+1.3.2
+Versão mais recente: 1.3.2
+
+6-Como houve mudanças críticas na API, muda a versão principal:
+2.0.0
+2.1.0
+2.1.1
+2.1.2
+
+7-Exemplos reais:
+Windows 11 24H2 → grande atualização do sistema.
+Google Chrome 136.0.7103 → usa correções e melhorias frequentes.
+Ubuntu 24.04 LTS → versão estável de longo suporte.
+Minecraft 1.21.1 → correções de bugs em relação à versão anterior.

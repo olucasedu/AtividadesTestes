@@ -1,0 +1,1 @@
+Criei um repositório de testes, fiz alterações diferentes no README nas branches master e dev, realizei o merge e ocorreu um conflito. Depois resolvi o conflito manualmente no arquivo e finalizei com um novo commit.

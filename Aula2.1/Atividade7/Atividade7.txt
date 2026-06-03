@@ -1,0 +1,15 @@
+1. Foi criado o arquivo reparo.md contendo orientações sobre o uso do comando git commit --amend. 
+Depois o arquivo foi adicionado ao Stage e registrado no repositório com um commit.
+
+2. Foi criado o arquivo referencias.md com informações adicionais sobre o comando amend. 
+Em seguida, o arquivo foi associado ao commit anterior utilizando o comando git commit --amend.
+
+3. O arquivo reparo.md foi editado, teve seu conteúdo alterado e a nova versão foi adicionada ao Stage. 
+Os comandos git diff e git diff --staged foram utilizados para comparar as diferenças entre a área de trabalho, o Stage e o repositório.
+
+4. O arquivo reparo.md foi editado novamente e recebeu o texto “Prestes a perder meus dados...”. 
+Depois disso, as diferenças entre as versões do arquivo foram observadas utilizando o comando git diff.
+
+5. O arquivo reparo.md foi removido da área de Stage utilizando o comando git restore --staged, mantendo apenas as alterações na área de trabalho.
+
+6. Foi utilizado o comando git restore reparo.md para restaurar a versão original do arquivo registrada no repositório, descartando as alterações mais recentes.

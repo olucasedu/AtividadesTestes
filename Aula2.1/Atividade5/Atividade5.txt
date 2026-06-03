@@ -1,0 +1,11 @@
+1. Modifiquei o arquivo Hello.java para que ele exibisse a mensagem “Hello Git!” várias vezes na tela.
+
+2. Utilizei os comandos git status e git diff para observar as alterações feitas no arquivo. Depois disso, usei git add e git commit para registrar a nova versão no repositório.
+
+3. Fiz novas alterações no arquivo e utilizei novamente o git diff para visualizar as diferenças entre as versões.
+
+4. Criei o arquivo hello.txt e adicionei o arquivo ao repositório com git add e git commit.
+
+5. Renomeei o arquivo hello.txt para hello.md utilizando o comando git mv e registrei a alteração no repositório.
+
+6. Removi o arquivo hello.md do repositório utilizando o comando git rm e finalizei com um commit.

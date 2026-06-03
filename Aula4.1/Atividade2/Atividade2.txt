@@ -1,0 +1,1 @@
+Atualizei o repositório local com as alterações do GitHub usando git pull, e depois visualizei no terminal o novo commit Teste2, mostrando que o repositório local e remoto ficaram sincronizados.

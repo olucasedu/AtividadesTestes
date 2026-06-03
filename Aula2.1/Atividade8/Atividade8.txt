@@ -1,0 +1,17 @@
+1. Foram analisadas as tags presentes no repositório do Git utilizando o comando git tag. 
+Foi possível observar diversas versões do projeto identificadas por tags, seguindo um padrão de versionamento numérico, como gitgui-0.6.0, gitgui-0.7.0 e gitgui-0.21.0. 
+Também foi encontrada uma versão “rc1”, indicando uma release candidata para testes antes da versão final.
+
+2. Foram pesquisados projetos que utilizam tags para organizar versões do software. 
+As tags normalmente são usadas para marcar lançamentos importantes, correções de erros e novas funcionalidades. 
+Além disso, elas armazenam informações relacionadas às versões publicadas ao longo do desenvolvimento do projeto.
+
+3. Foi possível perceber que as tags facilitam a identificação de versões específicas do sistema e ajudam na organização do histórico do projeto. 
+O uso de numeração crescente demonstra a evolução contínua do software e a existência de diferentes versões ao longo do tempo.
+
+4. Foram testados comandos de filtragem de tags e visualização de commits associados a versões específicas do projeto, permitindo analisar alterações relacionadas a determinadas versões.
+
+5. Foram criadas tags associadas ao commit mais recente e também a commits anteriores do repositório para testar o funcionamento do versionamento por tags.
+
+6. Foram criadas tags leves e anotadas. 
+As tags anotadas armazenaram informações adicionais, como mensagem, autor e data, enquanto as tags leves funcionaram apenas como marcadores simples para os commits.

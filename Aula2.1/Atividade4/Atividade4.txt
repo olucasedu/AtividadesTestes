@@ -1,0 +1,17 @@
+1-O arquivo .gitignore faz com que alguns arquivos e pastas não sejam enviados para o repositório Git. 
+
+Nesse exemplo:
+
+- O arquivo TODO da raiz será ignorado.
+- A pasta build inteira será ignorada.
+- Todos os arquivos .txt dentro da pasta doc serão ignorados.
+- Todos os arquivos .pdf dentro da pasta doc e de suas subpastas também serão ignorados.
+- O arquivo lib.a não será ignorado por causa do caractere “!” que cancela a regra de ignorar.
+
+Assim, esses arquivos não aparecerão no git status para serem adicionados ao repositório.
+
+2/3/4-Foi criado o arquivo hello.tmp no repositório. 
+Ao executar o comando git status, o arquivo apareceu como “untracked”, mostrando que ainda não estava sendo versionado. 
+
+Depois foi adicionada a regra "*.tmp" no arquivo .gitignore. 
+Ao executar novamente o git status, o arquivo hello.tmp deixou de aparecer, indicando que passou a ser ignorado pelo Git.

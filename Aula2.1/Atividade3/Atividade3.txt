@@ -1,0 +1,15 @@
+1-Projetos escolhidos no GitHub:
+- Bootstrap
+- React
+- VS Code
+
+2-Ao executar o comando, foi criada uma pasta do projeto contendo vários arquivos e a pasta oculta .git, responsável pelo controle de versões.
+
+3-Após executar, foi criada a pasta .git dentro do diretório, transformando a pasta em um repositório Git.
+
+
+4/5- 
+Alterações que foram realizadas:
+- Criação do arquivo Hello.java
+- Adição do código Hello World
+- Registro das mudanças no histórico do Git

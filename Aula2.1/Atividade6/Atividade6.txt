@@ -1,0 +1,15 @@
+1. Foram testados diferentes comandos de histórico do Git no repositório clonado, como git log, git log --oneline, git log -p e git log --stat.
+
+Os comandos permitiram visualizar os commits realizados no projeto, mostrando informações como autor, data, mensagens dos commits e alterações feitas nos arquivos. Também foi possível perceber que alguns comandos exibem o histórico de forma resumida e outros apresentam detalhes completos das modificações.
+
+
+2. Foi executado o comando:
+
+git log --pretty="%h - %s" --author=gitster --since="2008-10-01" --before="2008-11-01" --no-merges -- t/
+
+Esse comando realizou uma busca no histórico do repositório do Git, exibindo apenas commits do autor “gitster”, feitos entre outubro e novembro de 2008, ignorando commits de merge e considerando apenas alterações relacionadas à pasta “t/”.
+
+
+3. A consulta apresentou vários commits realizados no período informado, mostrando o identificador resumido de cada commit e sua descrição.
+
+Também foi possível observar que o Git permite filtrar o histórico por autor, período, tipo de commit e diretório específico, facilitando a análise das alterações realizadas no projeto.

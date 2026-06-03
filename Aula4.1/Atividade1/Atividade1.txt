@@ -1,0 +1,1 @@
+Criei um repositório remoto no GitHub, clonei ele localmente, verifiquei o estado do repositório e o histórico de commits. Depois alterei o nome da referência remota de origin para r1 usando o comando git remote rename.
