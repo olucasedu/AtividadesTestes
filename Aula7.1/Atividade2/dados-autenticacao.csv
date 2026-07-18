@@ -1,0 +1,5 @@
+algoritmo,senhaCadastrada,tentativa,resultadoEsperado
+SHA-256,senha123,senha123,true
+MD5,senha123,senhaErrada,false
+SHA-1,abc123,abc123,true
+SHA-256,teste123,errada,false

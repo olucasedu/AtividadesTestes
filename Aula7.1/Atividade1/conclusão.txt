@@ -1,0 +1,1 @@
+Nesta atividade, implementei a classe Usuario com validações para nome, e-mail e senha. Também adicionei o controle de tentativas de login, bloqueando o usuário após quatro erros em menos de 30 segundos. Por fim, criei testes com JUnit 5 usando TestInfo, TestReporter e RepetitionInfo para verificar o funcionamento do código.

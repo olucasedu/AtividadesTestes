@@ -1,0 +1,1 @@
+Nesta atividade, reescrevi alguns testes anteriores usando Hamcrest para deixá-los mais simples e legíveis. Foram utilizados operadores como is, equalTo, not e allOf para verificar nomes, e-mails, senhas e resultados de autenticação. Também mantive o assertThrows nos casos de exceção, por ser mais adequado.
