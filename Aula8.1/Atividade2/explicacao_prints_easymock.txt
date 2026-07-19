@@ -1,0 +1,37 @@
+ATIVIDADE 2 – TESTES COM EASYMOCK
+
+EXPLICAÇÃO DO PRIMEIRO PRINT
+
+No primeiro teste, foi criado um Mock da interface Collaborator por meio do método mock(). Esse objeto falso foi injetado na classe ClassTested, que representa o sistema que está sendo testado.
+
+Antes da execução do método testado, foi registrada a expectativa de que o método documentAdded() deveria ser chamado com o argumento "Novo Documento". Em seguida, o método replayAll() colocou o Mock no modo de execução.
+
+Depois disso, o método addDocument() foi executado, adicionando um novo documento. Como o documento ainda não existia, a classe testada chamou documentAdded(). Por fim, verifyAll() confirmou que a chamada esperada realmente aconteceu com o argumento correto.
+
+Recursos utilizados:
+- mock(): cria automaticamente o objeto Mock;
+- replayAll(): coloca os Mocks no modo de execução;
+- verifyAll(): verifica se todas as chamadas esperadas aconteceram.
+
+
+EXPLICAÇÃO DO SEGUNDO PRINT
+
+No segundo teste, foi verificado o comportamento da classe quando um documento já existente é alterado. Primeiramente, foi registrada uma chamada ao método documentAdded(), pois na primeira execução o documento ainda não existia.
+
+Em seguida, foi registrada a expectativa de que o método documentChanged() deveria ser chamado três vezes. Para indicar essa quantidade, foi utilizado expectLastCall().times(3).
+
+Durante a execução, o documento foi adicionado uma vez e alterado outras três vezes. Na primeira chamada de addDocument(), ocorreu documentAdded(). Nas três chamadas seguintes, como o documento já existia, ocorreu documentChanged().
+
+Ao final, verifyAll() confirmou que documentAdded() foi chamado uma vez e documentChanged() foi chamado exatamente três vezes.
+
+Recursos utilizados:
+- mock(): cria o objeto Mock;
+- expectLastCall(): permite configurar a última chamada registrada;
+- times(3): determina que a chamada deve acontecer exatamente três vezes;
+- replayAll(): inicia o modo de execução;
+- verifyAll(): confirma que as expectativas foram atendidas.
+
+
+CONCLUSÃO
+
+Os dois exemplos mostram como o EasyMock permite criar objetos falsos e verificar as interações entre a classe testada e suas dependências. No primeiro teste, foi verificada uma chamada simples. No segundo, também foi controlada a quantidade exata de vezes em que um método deveria ser executado.

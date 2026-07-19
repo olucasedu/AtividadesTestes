@@ -1,0 +1,82 @@
+ATIVIDADE 3 – TESTES COM MOCKITO
+
+RESULTADO DA EXECUÇÃO
+
+A classe ClassTestedMockitoTest foi executada com sucesso. Foram realizados três testes, sem falhas, erros ou testes ignorados.
+
+Resultado apresentado:
+
+Tests run: 3
+Failures: 0
+Errors: 0
+Skipped: 0
+BUILD SUCCESS
+
+Isso confirma que os três exemplos com Mockito funcionaram corretamente.
+
+
+1. EXEMPLO COM verify()
+
+No primeiro teste, foi utilizado o método verify() para confirmar que uma interação esperada realmente aconteceu.
+
+Após adicionar um novo documento por meio do método addDocument(), a classe testada deveria chamar o método documentAdded() do Collaborator.
+
+A verificação foi feita com:
+
+verify(collaboratorMock)
+        .documentAdded("Novo Documento");
+
+Esse recurso permite confirmar que determinado método foi chamado e que recebeu o argumento correto.
+
+
+2. EXEMPLO COM when() E thenReturn()
+
+No segundo teste, foi utilizado when().thenReturn() para configurar o comportamento do Mock.
+
+A configuração foi:
+
+when(collaboratorMock.voteForRemoval("Relatório"))
+        .thenReturn((byte) 1);
+
+Isso significa que, quando o método voteForRemoval() fosse chamado com o argumento "Relatório", o Mock deveria retornar o valor 1.
+
+Esse retorno representou um voto favorável à remoção do documento. Depois da execução, o teste verificou que o resultado foi verdadeiro e que os métodos voteForRemoval() e documentRemoved() foram chamados corretamente.
+
+Esse recurso é útil para simular respostas de dependências sem utilizar uma implementação real.
+
+
+3. EXEMPLO COM times()
+
+No terceiro teste, foi utilizado times(3) para verificar a quantidade exata de chamadas feitas a um método.
+
+A verificação foi:
+
+verify(collaboratorMock, times(3))
+        .documentChanged("Documento");
+
+O documento foi adicionado pela primeira vez e depois alterado outras três vezes. Dessa forma, documentChanged() deveria ser chamado exatamente três vezes.
+
+O recurso times() permite verificar quantas vezes uma interação ocorreu. Caso o método fosse chamado uma quantidade diferente, o teste falharia.
+
+
+FUNCIONALIDADES INTERESSANTES DO MOCKITO
+
+Os exemplos demonstraram três funcionalidades importantes:
+
+- verify(): verifica se um método foi chamado com os argumentos esperados;
+- when().thenReturn(): configura o valor que um método do Mock deve retornar;
+- times(): verifica a quantidade exata de chamadas realizadas.
+
+O Mockito torna os testes mais simples porque cria objetos falsos automaticamente e permite configurar respostas e verificar interações com uma sintaxe direta.
+
+
+OBSERVAÇÃO SOBRE OS AVISOS DA EXECUÇÃO
+
+Durante a execução apareceram avisos relacionados ao carregamento dinâmico do agente utilizado pelo Mockito e pelo Byte Buddy. Esses avisos não representam falha nos testes.
+
+O resultado BUILD SUCCESS, junto com Failures: 0 e Errors: 0, confirma que os testes foram executados corretamente. Os avisos apenas informam que versões futuras do Java poderão exigir uma configuração adicional para o agente do Mockito.
+
+
+CONCLUSÃO
+
+Os três testes foram executados corretamente. O primeiro verificou uma chamada simples com verify(), o segundo simulou um retorno com when().thenReturn() e o terceiro verificou a quantidade de chamadas com times(3). Esses recursos facilitam a criação de Mocks e a verificação do comportamento das classes testadas.

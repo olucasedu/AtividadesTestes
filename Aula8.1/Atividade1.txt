@@ -1,0 +1,187 @@
+ATIVIDADE 1 – DEMAIS DUBLÊS DE TESTE
+
+1. DUMMY OBJECT
+
+Definição:
+Dummy Object é um objeto criado apenas para preencher um parâmetro obrigatório de um método ou construtor. Ele é passado para o código, mas não é realmente utilizado durante o teste.
+
+Exemplo prático:
+
+public class Usuario {
+    private String nome;
+
+    public Usuario(String nome) {
+        this.nome = nome;
+    }
+}
+
+public class RelatorioService {
+    public String gerarResumo(String titulo, Usuario responsavel) {
+        return "Relatório: " + titulo;
+    }
+}
+
+Teste:
+
+@Test
+public void deveGerarResumo() {
+    RelatorioService service = new RelatorioService();
+
+    Usuario usuarioDummy = new Usuario("Usuário qualquer");
+
+    String resultado =
+            service.gerarResumo("Vendas", usuarioDummy);
+
+    assertEquals("Relatório: Vendas", resultado);
+}
+
+Nesse exemplo, o objeto usuarioDummy é necessário porque o método exige um Usuario, mas ele não influencia o resultado do teste.
+
+
+2. FAKE OBJECT
+
+Definição:
+Fake Object é uma implementação simplificada, mas funcional, de uma dependência real. Ele executa operações normalmente, porém sem utilizar recursos externos, como banco de dados, arquivos ou servidores.
+
+Exemplo prático:
+
+public interface UsuarioRepository {
+    void salvar(Usuario usuario);
+    Usuario buscarPorNome(String nome);
+}
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class UsuarioRepositoryFake implements UsuarioRepository {
+
+    private Map<String, Usuario> usuarios = new HashMap<>();
+
+    @Override
+    public void salvar(Usuario usuario) {
+        usuarios.put(usuario.getNome(), usuario);
+    }
+
+    @Override
+    public Usuario buscarPorNome(String nome) {
+        return usuarios.get(nome);
+    }
+}
+
+Teste:
+
+@Test
+public void deveSalvarEBuscarUsuario() {
+    UsuarioRepositoryFake repositorio =
+            new UsuarioRepositoryFake();
+
+    Usuario usuario = new Usuario("Lucas");
+
+    repositorio.salvar(usuario);
+
+    Usuario resultado =
+            repositorio.buscarPorNome("Lucas");
+
+    assertEquals("Lucas", resultado.getNome());
+}
+
+Nesse exemplo, o Fake realmente salva e busca usuários, mas utiliza um HashMap em memória em vez de um banco de dados real.
+
+
+3. TEST SPY
+
+Definição:
+Test Spy é um objeto que registra informações sobre as chamadas recebidas durante o teste. Depois da execução, o teste pode verificar se um método foi chamado, quantas vezes foi chamado e quais argumentos recebeu.
+
+Exemplo prático:
+
+public interface EmailService {
+    void enviar(String destinatario, String mensagem);
+}
+
+public class EmailServiceSpy implements EmailService {
+
+    private boolean emailEnviado;
+    private String destinatarioRecebido;
+    private String mensagemRecebida;
+
+    @Override
+    public void enviar(String destinatario, String mensagem) {
+        emailEnviado = true;
+        destinatarioRecebido = destinatario;
+        mensagemRecebida = mensagem;
+    }
+
+    public boolean isEmailEnviado() {
+        return emailEnviado;
+    }
+
+    public String getDestinatarioRecebido() {
+        return destinatarioRecebido;
+    }
+
+    public String getMensagemRecebida() {
+        return mensagemRecebida;
+    }
+}
+
+public class CadastroService {
+
+    private EmailService emailService;
+
+    public CadastroService(EmailService emailService) {
+        this.emailService = emailService;
+    }
+
+    public void cadastrar(String email) {
+        emailService.enviar(
+                email,
+                "Cadastro realizado com sucesso"
+        );
+    }
+}
+
+Teste:
+
+@Test
+public void deveEnviarEmailDepoisDoCadastro() {
+    EmailServiceSpy emailSpy = new EmailServiceSpy();
+
+    CadastroService service =
+            new CadastroService(emailSpy);
+
+    service.cadastrar("lucas@email.com");
+
+    assertTrue(emailSpy.isEmailEnviado());
+
+    assertEquals(
+            "lucas@email.com",
+            emailSpy.getDestinatarioRecebido()
+    );
+
+    assertEquals(
+            "Cadastro realizado com sucesso",
+            emailSpy.getMensagemRecebida()
+    );
+}
+
+Nesse exemplo, o Spy registra que o método enviar() foi chamado e também guarda os valores recebidos.
+
+
+4. PRINCIPAIS DIFERENÇAS
+
+Dummy Object:
+É utilizado apenas para preencher um parâmetro obrigatório. Não possui comportamento importante para o teste e não registra chamadas.
+
+Fake Object:
+Possui uma implementação simplificada e funcional. É usado para substituir componentes reais, como bancos de dados, arquivos ou serviços externos.
+
+Test Spy:
+Registra as interações feitas durante o teste. Permite verificar se determinado método foi chamado e quais dados foram recebidos.
+
+A principal diferença é que o Dummy apenas ocupa o lugar de um objeto exigido pelo código. O Fake realiza operações de forma simplificada. Já o Test Spy registra as chamadas recebidas para que elas sejam verificadas depois.
+
+
+5. CONCLUSÃO
+
+Os dublês de teste permitem testar uma classe sem depender completamente de outros componentes do sistema. O Dummy Object é usado somente para preencher parâmetros, o Fake Object oferece uma implementação simplificada e funcional e o Test Spy registra as interações realizadas durante o teste. A escolha do dublê depende do objetivo da verificação que está sendo feita.

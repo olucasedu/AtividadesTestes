@@ -1,0 +1,193 @@
+ATIVIDADE 4 – COMPARATIVO ENTRE FRAMEWORKS PARA MOCK
+
+1. INTRODUÇÃO
+
+Os frameworks EasyMock, JMock e Mockito servem para facilitar a criação de objetos falsos durante os testes. Eles ajudam a testar uma classe sem precisar usar banco de dados, arquivos, APIs ou outras partes reais do sistema.
+
+Apesar de terem o mesmo objetivo, cada um possui uma forma diferente de criar e configurar os Mocks.
+
+
+2. EASYMOCK
+
+O EasyMock trabalha com três etapas principais:
+
+1. Criar e configurar o Mock;
+2. Colocar o Mock em execução com replay();
+3. Conferir as chamadas com verify().
+
+Exemplo:
+
+expect(mock.buscarConta("1")).andReturn(conta);
+replay(mock);
+
+servico.executar();
+
+verify(mock);
+
+Alguns recursos importantes:
+
+- mock() ou createMock(): cria o objeto falso;
+- expect().andReturn(): define o que o Mock deve retornar;
+- expectLastCall().times(): define quantas vezes um método deve ser chamado;
+- replay(): inicia o modo de execução;
+- verify(): verifica se as chamadas aconteceram.
+
+Uma vantagem do EasyMock é que ele deixa bem separada a parte de configurar, executar e verificar. Porém, é preciso lembrar de usar replay(), senão o teste pode dar erro.
+
+
+3. JMOCK
+
+O JMock utiliza um objeto chamado Mockery, que controla os Mocks e as expectativas do teste.
+
+Exemplo:
+
+context.checking(new Expectations() {{
+    oneOf(mock).buscarConta("1");
+    will(returnValue(conta));
+}});
+
+Alguns recursos importantes:
+
+- context.mock(): cria o Mock;
+- oneOf(): indica que o método deve ser chamado uma vez;
+- exactly(): define uma quantidade exata de chamadas;
+- never(): indica que o método não deve ser chamado;
+- will(returnValue()): define o valor retornado.
+
+O JMock é interessante porque deixa todas as expectativas organizadas em um bloco. Porém, a sintaxe pode parecer um pouco mais complicada no começo.
+
+
+4. MOCKITO
+
+O Mockito possui uma sintaxe mais simples e direta. Nele, normalmente configuramos o retorno, executamos o método testado e depois verificamos as chamadas.
+
+Exemplo:
+
+when(mock.buscarConta("1")).thenReturn(conta);
+
+servico.executar();
+
+verify(mock).atualizarConta(conta);
+
+Alguns recursos importantes:
+
+- @Mock ou Mockito.mock(): cria o objeto falso;
+- when().thenReturn(): define um valor de retorno;
+- verify(): verifica se o método foi chamado;
+- times(): verifica quantas vezes o método foi chamado;
+- never(): verifica se o método não foi chamado;
+- spy(): cria um Spy de um objeto real;
+- thenThrow() ou doThrow(): simula exceções.
+
+Na minha opinião, o Mockito é o mais fácil de entender, porque não precisa usar replay() e a leitura do código fica mais natural.
+
+
+5. COMPARAÇÃO ENTRE OS FRAMEWORKS
+
+EasyMock:
+- Usa expect(), replay() e verify();
+- Tem etapas mais rígidas;
+- É organizado, mas exige um pouco mais de código.
+
+JMock:
+- Usa blocos de Expectations;
+- É bem focado nas interações entre os objetos;
+- Pode ser mais difícil de entender no início.
+
+Mockito:
+- Usa when(), thenReturn() e verify();
+- Tem uma sintaxe mais simples;
+- Não precisa de replay();
+- Foi o mais fácil de usar entre os três.
+
+
+6. COMO ELES AJUDAM NOS DUBLÊS DE TESTE
+
+Dummy Object:
+
+Um Dummy é usado apenas para preencher um parâmetro obrigatório. Um Mock sem configuração pode ser usado como Dummy, desde que ele não seja realmente chamado.
+
+Exemplo:
+
+Collaborator dummy = mock(Collaborator.class);
+
+
+Stub:
+
+Um Stub devolve respostas já definidas.
+
+EasyMock:
+
+expect(mock.buscar()).andReturn(valor);
+
+JMock:
+
+oneOf(mock).buscar();
+will(returnValue(valor));
+
+Mockito:
+
+when(mock.buscar()).thenReturn(valor);
+
+
+Mock:
+
+O Mock verifica se determinados métodos foram chamados.
+
+EasyMock:
+
+replay(mock);
+verify(mock);
+
+JMock:
+
+oneOf(mock).salvar();
+
+Mockito:
+
+verify(mock).salvar();
+
+
+Test Spy:
+
+O Spy registra as chamadas realizadas para que elas possam ser conferidas depois.
+
+No Mockito, pode ser criado assim:
+
+Servico servicoSpy = spy(new Servico());
+
+verify(servicoSpy).executar();
+
+
+Fake Object:
+
+O Fake possui uma implementação simplificada, mas que realmente funciona.
+
+Um exemplo seria um repositório que salva os dados em uma lista ou em um HashMap, sem usar banco de dados real.
+
+Nesse caso, normalmente o Fake ainda precisa ser criado manualmente, porque ele possui uma lógica própria.
+
+
+7. COMO OS FRAMEWORKS FACILITAM OS TESTES
+
+Esses frameworks ajudam porque evitam a criação manual de várias classes falsas.
+
+Além disso, eles permitem:
+
+- configurar valores de retorno;
+- simular erros e exceções;
+- verificar métodos e argumentos;
+- verificar a quantidade de chamadas;
+- testar uma classe de forma isolada;
+- evitar dependência de banco de dados, APIs ou outros serviços.
+
+Com isso, os testes ficam mais rápidos, organizados e fáceis de repetir.
+
+
+8. CONCLUSÃO
+
+EasyMock, JMock e Mockito possuem o mesmo objetivo, que é facilitar a criação e o uso de Mocks nos testes.
+
+O EasyMock usa as etapas de configuração, replay e verificação. O JMock organiza as expectativas em blocos. Já o Mockito possui uma sintaxe mais direta e simples.
+
+Entre os três, achei o Mockito mais fácil de usar, porque o código fica mais curto e não precisa de replay(). Mesmo assim, os três frameworks são úteis para criar e controlar dublês de teste, principalmente Stubs, Mocks, Dummies e Spies.
